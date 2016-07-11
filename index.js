@@ -17,7 +17,7 @@ function toNum(val) {
  * @return {Maybe Number} sum
  */
 function sum(arr) {
-  return (arr.map(toNum)).reduce((total, val) => (total + isNothing(val) ? 0 : val), 0);
+  return (arr.map(toNum)).reduce((total, val) => (total + (isNothing(val) ? 0 : val)), 0);
 }
 /**
  * @param val1 {Maybe *}
@@ -27,7 +27,7 @@ function sum(arr) {
 function multiply(val1, val2) {
   const castedVal1 = toNum(val1);
   const castedVal2 = toNum(val2);
-  return isNothing(castedVal1) || isNothing(castedVal2) ? null : (castedVal1 * castedVal2);
+  return isNothing(castedVal1) || (isNothing(castedVal2) ? null : (castedVal1 * castedVal2));
 }
 /**
  * @param val1 {Maybe *}
@@ -37,7 +37,7 @@ function multiply(val1, val2) {
 function div(val1, val2) {
   const castedVal1 = toNum(val1);
   const castedVal2 = toNum(val2);
-  return isNothing(castedVal1) || isNothing(castedVal2) || castedVal2 === 0 ? null : (castedVal1 / castedVal2);
+  return isNothing(castedVal1) || isNothing(castedVal2) || (castedVal2 === 0 ? null : (castedVal1 / castedVal2));
 }
 /**
  * @param val {Maybe *}
