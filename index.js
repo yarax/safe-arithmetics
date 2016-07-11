@@ -37,7 +37,7 @@ function multiply(val1, val2) {
 function div(val1, val2) {
   const castedVal1 = toNum(val1);
   const castedVal2 = toNum(val2);
-  return (isNothing(castedVal1) || isNothing(castedVal2) || castedVal2 === 0) ? null : (castedVal1 / castedVal2));
+  return (isNothing(castedVal1) || isNothing(castedVal2) || castedVal2 === 0) ? null : (castedVal1 / castedVal2);
 }
 /**
  * @param val {Maybe *}
