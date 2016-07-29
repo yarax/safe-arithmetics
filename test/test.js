@@ -47,4 +47,23 @@ describe('All', () => {
     assert.equal(safe.round('7.2'), 7);
   })
 
+  it('minus', () => {
+    assert.equal(safe.minus(null, 2), null);
+    assert.equal(safe.minus(3, 2), 1);
+    assert.equal(safe.minus('3', '2'), 1);
+    assert.equal(safe.minus(NaN, '2'), null);
+  });
+
+  it('more', () => {
+    assert.equal(safe.more(null, 2), false);
+    assert.equal(safe.more(3, 2), true);
+    assert.equal(safe.more(3, 3), false);
+  });
+
+  it('moreEq', () => {
+    assert.equal(safe.moreEq(null, 2), false);
+    assert.equal(safe.moreEq(3, 2), true);
+    assert.equal(safe.moreEq(3, 3), true);
+  });
+
 });
