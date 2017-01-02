@@ -1,6 +1,8 @@
 # Safe arithmetics
 
-Small lib to perform arithmetic operations on Maybe types in JavaScript
+A small library to perform safe arithmetic operations in JavaScript.
+The behavior is similar to Maybe monad: if the value can be applied to function - it applies, otherwise it's `null` (Nothing)
+No `NaN` or unexpected results anymore
 
 # Usage
 
